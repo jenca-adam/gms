@@ -1,0 +1,23 @@
+{% extends "gmsapp/base.html"%}
+{%block title%}
+INBOX
+{%endblock%} 
+{%block body%}
+<table id="MAILS">
+{%for mail in MAILS%}
+
+<tr>
+<td>
+{{mail.from_user.username}}
+</td>
+<td>
+{{mail.datepub}}
+</td>
+<td>
+{{mail.content}}
+</td>
+</tr>
+{%endfor%}
+</table>
+
+{%endblock%}
