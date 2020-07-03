@@ -1,0 +1,12 @@
+{% extends 'gmsapp/base.html' %}
+<head>
+{% block title %}GMS:Login{% endblock %}
+</head>
+{% block body %}
+  <h1>Login</h1>
+  <form method="post" align=center>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}

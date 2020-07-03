@@ -24,10 +24,9 @@ SECRET_KEY = 'r5mr3ppji@cxd3t+lze(5%z@af3((k=ymb_el2%nt6bl^9*hb)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
-
+APPEND_SLASH=True
 # Application definition
 
 INSTALLED_APPS = [
@@ -114,8 +113,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL='/inbox/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
+LOGIN_URL='/login/'
 STATIC_URL = '/static/'

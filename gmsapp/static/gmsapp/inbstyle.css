@@ -1,0 +1,44 @@
+body{	
+	margin:center;
+	text-align:center;
+	font-family:sans-serif;
+	color:blue;
+	font-weight:bold;
+	background-image:url('inboxbg.jpg');
+
+
+}
+h1{
+	font-variant:small-caps;
+}
+div#content{	
+	border-top:1em solid red;
+	border-bottom:1em solid red;
+	padding:0.5em;
+	border-left:2em solid yellow;
+	border-right:2em solid yellow;
+}
+table{	
+	align:center;	
+	border:5pt solid white;
+	padding:1em 1em;
+}
+td{	
+	font-weight:900;
+	border:2.5pt solid gold;
+	padding 0.5em 1em;
+}
+div#content div#top{
+	border-top:1.67em solid tomato;
+	border-left:1.67em solid powderblue;
+	border-bottom:1.67em solid tomato;
+	border-right:1.67em solid powderblue;
+	color:darkblue;
+	font-size:5mm;
+	
+}
+div#content div#top a{
+	color:darkmagenta;
+}
+	
+		

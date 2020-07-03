@@ -1,11 +1,26 @@
 {% extends "gmsapp/base.html"%}
+
 {%block title%}
 INBOX
 {%endblock%} 
 {%block body%}
-<table id="MAILS">
-{%for mail in MAILS%}
+<div id="content">
+<div id="top">
+<br><br><br><br>
+Logged in:{{curuser}}<a href=/logout/>        LOGOUT       </a>
+<br><br><br><br>
+</div>
+<form action="/inbox/" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<p>
+<input type="submit" value="Send" align=center />
+</p>
+</form>
 
+<table id="MAILS" align=center>
+{%for mail in MAILS%}
+{%if mail.to_user == curuser %} 
 <tr>
 <td>
 {{mail.from_user.username}}
@@ -17,7 +32,11 @@ INBOX
 {{mail.content}}
 </td>
 </tr>
-{%endfor%}
-</table>
+{%endif%}
 
+
+{%endfor%}
+
+</table>
+</div>
 {%endblock%}
