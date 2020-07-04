@@ -1,0 +1,19 @@
+{%extends 'gmsapp/base.html'%}
+{%block title%}
+GMS:Gold mailing services
+{%endblock%}
+{%block body%}
+<div id=main>
+<header>
+<p>
+<form method="GET" action="/login" id="LOGIN_BUTT">
+<input type=submit value="Log in">
+</form>
+Don't have an account??
+<form method="GET" action="/newaccount" id="N.ACC.BUTT">
+<input type=submit value="Sign up">
+</form>
+</p>
+</header>
+</div>
+{%endblock%}

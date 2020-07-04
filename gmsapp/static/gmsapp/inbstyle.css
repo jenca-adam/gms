@@ -40,5 +40,9 @@ div#content div#top{
 div#content div#top a{
 	color:darkmagenta;
 }
+
+input[type=submit]{
+	color:white;
+	background-color:green;
 	
-		
+}

@@ -1,0 +1,24 @@
+{%extends 'gmsapp/base.html'%}
+{%block title%}
+Send:GMS
+{%endblock%}
+{%block body%}
+<table align=center>
+{%for i in MYMAILS%}
+<tr>
+<td>
+{{i.to_user}}
+</td>
+<td>
+{{i.datepub}}
+</td>
+<td>
+{{i.content}}
+</td>
+</tr>
+
+{%endfor%}
+</table>
+<footer>
+<a href=/inbox/>Back to inbox</a></footer>
+{%endblock%}
