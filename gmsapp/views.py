@@ -4,6 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django import forms
 from .models import MAIL,User
 from django.contrib.auth.decorators import login_required
+import time
 
 class MAILFORM(forms.Form):
     touser=forms.CharField(max_length=500,label="To:")
@@ -85,6 +86,14 @@ def MMVIEW(request):
         'MYMAILS':query_set_valid
     }
     return HttpResponse(template.render(context,request))
+def OPTVIEW(request):
+    template=loader.get_template('gmsapp/options.html')
+    return HttpResponse(template.render({},request))
 def STVIEW(request):
     template=loader.get_template('gmsapp/stview.html')
-    return HttpResponse(template.render({},request))
+    curtime=time.ctime(time.time())
+    context={
+        'curtime':curtime
+
+        }
+    return HttpResponse(template.render(context,request))

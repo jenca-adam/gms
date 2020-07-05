@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from gmsapp.views import INBOXVIEW,NEWACCOUNTVIEW,MMVIEW,STVIEW
+from gmsapp.views import INBOXVIEW,NEWACCOUNTVIEW,MMVIEW,OPTVIEW,STVIEW
 from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     url(r'^$',STVIEW),
+    url(r'^options/$',OPTVIEW),
     url(r'^admin/', admin.site.urls),
     url(r'^inbox/$', INBOXVIEW),
     url(r'^login/$',auth_views.login,{'template_name':'gmsapp/login.html'}),

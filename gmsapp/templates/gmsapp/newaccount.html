@@ -3,9 +3,13 @@
 Sign up:GMS
 {%endblock%}
 {%block body%}
+<header>
+<a href="/">
+Back to main page</a></header>
+<h1> Sign up</h1>
 <form action="/newaccount/" method="POST">
 {%csrf_token%}
 {{form.as_p}}
-<input type="submit" value="Sign up" />
+<button type="submit" value="Sign up">Sign up</button>
 </form>
 {%endblock%}

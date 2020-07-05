@@ -2,7 +2,11 @@
 <head>
 {% block title %}GMS:Login{% endblock %}
 </head>
+
 {% block body %}
+  <header>
+  <a href="/">Back to main page</a>
+  </header>
   <h1>Login</h1>
   <form method="post" align=center>
     {% csrf_token %}

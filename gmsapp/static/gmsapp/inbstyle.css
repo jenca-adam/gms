@@ -4,12 +4,13 @@ body{
 	font-family:sans-serif;
 	color:blue;
 	font-weight:bold;
-	background-image:url('inboxbg.jpg');
+	background-color:peru;
 
 
 }
 h1{
 	font-variant:small-caps;
+	color:olive;
 }
 div#content{	
 	border-top:1em solid red;
@@ -41,8 +42,39 @@ div#content div#top a{
 	color:darkmagenta;
 }
 
-input[type=submit]{
+button{
+	border:none;
 	color:white;
-	background-color:green;
+	background-color:forestgreen;
+	display:inline-block;
+	padding: 15px 32px;
+	font-size:16px;
+	border-radius:9px;
+	transition-duration:0.7s;
+	box-shadow: 0 12px 16px 0 rgba(75,0,130,0.7), 0 17px 50px 0 rgba(75,0,130,0.7);
+
 	
 }
+button:hover{
+	border:2px solid forestgreen;
+	background-color:white;
+	color:forestgreen;
+	border-radius:2px;
+	box-shadow: 0 12px 16px 0 rgba(20,200,0,18.24), 0 17px 50px 0 rgba(20,200,0,18.19);
+
+}
+input[type=text],[type=password],[type=email],textarea{
+	background-color:snow;
+
+}
+header{
+	background-color:black;
+	color:snow;
+	font-family:Times;
+}
+header a{
+	color:crimson;
+}
+
+
+

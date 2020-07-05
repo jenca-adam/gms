@@ -1,19 +1,17 @@
 {%extends 'gmsapp/base.html'%}
 {%block title%}
-GMS:Gold mailing services
+GMS: Gold mailin' services
 {%endblock%}
 {%block body%}
-<div id=main>
+<div id="main">
 <header>
-<p>
-<form method="GET" action="/login" id="LOGIN_BUTT">
-<input type=submit value="Log in">
-</form>
-Don't have an account??
-<form method="GET" action="/newaccount" id="N.ACC.BUTT">
-<input type=submit value="Sign up">
-</form>
-</p>
+<p>Time:{{curtime}}</p>
+<p><a href="/options">Log in <br>or<br> Sign up</a></p></header>
 </header>
-</div>
+<h1> Easier work with GMS</h1>
+<main>
+GMS is simple mailing service.
+You can send mails,receive mails,login,logout and nothing 'other
+</main>
 {%endblock%}
+
