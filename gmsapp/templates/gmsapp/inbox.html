@@ -33,6 +33,12 @@ My send mails</a>
 <td>
 {{mail.content}}
 </td>
+{%if mail.attachment%}
+
+<td>
+<a href="{{mail.attachment.url}}">{{mail.attachment.name}}</a>
+</td>
+{%endif%}
 </tr>
 {%endif%}
 

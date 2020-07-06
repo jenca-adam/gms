@@ -9,6 +9,8 @@ import time
 class MAILFORM(forms.Form):
     touser=forms.CharField(max_length=500,label="To:")
     content=forms.CharField(max_length=10000,label="Content:",widget=forms.Textarea)
+    attached_file=forms.FileField(required=False)
+
 class NEWACCOUNTFORM(forms.Form):
     username=forms.CharField(max_length=500,label="Username:")
     password=forms.CharField(max_length=100,label="Password:",widget=forms.PasswordInput)
@@ -39,16 +41,18 @@ class NEWACCOUNTFORM(forms.Form):
         return data
 
  
-
 @login_required
 def INBOXVIEW(request):
     if request.method=='POST':
-        form=MAILFORM(request.POST)
+        form=MAILFORM(request.POST,request.FILES)
         if form.is_valid():
             mail=MAIL(content=form.cleaned_data['content'],
             to_user=User.objects.get(username=form.cleaned_data['touser']),
-            from_user=User.objects.get(username=request.user))
+            from_user=User.objects.get(username=request.user),
+            attachment=request.FILES.get(form.cleaned_data.get('attached_file')))
             mail.save()
+                           
+                
             return HttpResponseRedirect('/inbox/')
     else:
         form=MAILFORM()
@@ -57,6 +61,7 @@ def INBOXVIEW(request):
         'MAILS':MAIL.objects.all().order_by('-datepub'),
         'form':form,
         'curuser':request.user,
+    
         }
     return HttpResponse(template.render(context,request))
 
@@ -97,3 +102,4 @@ def STVIEW(request):
 
         }
     return HttpResponse(template.render(context,request))
+
