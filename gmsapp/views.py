@@ -4,6 +4,8 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django import forms
 from .models import MAIL,User
 from django.contrib.auth.decorators import login_required
+from .helpmodules.huf import handle_uploaded_file
+from os.path import split
 import time
 
 class MAILFORM(forms.Form):
@@ -46,12 +48,13 @@ def INBOXVIEW(request):
     if request.method=='POST':
         form=MAILFORM(request.POST,request.FILES)
         if form.is_valid():
-            mail=MAIL(content=form.cleaned_data['content'],
-            to_user=User.objects.get(username=form.cleaned_data['touser']),
-            from_user=User.objects.get(username=request.user),
-            attachment=request.FILES.get(form.cleaned_data.get('attached_file')))
+            mail=MAIL(
+                to_user=User.objects.get(username=form.cleaned_data['touser']),
+                from_user=request.user,
+                content=form.cleaned_data.get('content'),
+                attachment=request.FILES.get('attached_file')
+            )
             mail.save()
-                           
                 
             return HttpResponseRedirect('/inbox/')
     else:

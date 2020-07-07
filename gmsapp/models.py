@@ -9,7 +9,7 @@ class MAIL(models.Model):
         on_delete=models.CASCADE,
         related_name='to_user')
     datepub=models.DateTimeField(auto_now_add=True)
-    attachment=models.FileField(upload_to='attachment/')
+    attachment=models.FileField(upload_to='gmsapp/attachment/')
     def __str__(self):
         return('{}→{}:{}'.format(self.from_user.username,self.to_user.username,str(self.content)))
 

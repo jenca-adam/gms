@@ -119,3 +119,4 @@ LOGIN_REDIRECT_URL='/inbox/'
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 LOGIN_URL='/login/'
 STATIC_URL = '/static/'
+
