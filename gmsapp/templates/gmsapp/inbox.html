@@ -12,7 +12,7 @@ Logged in:{{curuser}}<br><a href=/logout/>        LOGOUT       </a><br>
 My send mails</a>
 <br><br><br><br>
 </div>
-<form action="/inbox/" method="POST">
+<form action="/inbox/" method="POST" enctype="multipart/form-data">
 {% csrf_token %}
 {{form.as_p}}
 <p>
